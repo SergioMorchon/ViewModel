@@ -9,34 +9,37 @@ namespace Tests
         public void TestAll() 
         {
             var computedCalledTimes = 0;
-            var someViewModel = new SomeViewModel();
-            someViewModel.PropertyChanged += (sender, e) =>
+            var lastFullname = "";
+            var wololo = new Contact();
+            wololo.PropertyChanged += (sender, e) =>
             {
-                if (e.PropertyName == nameof(someViewModel.Result))
+                if (e.PropertyName == nameof(wololo.Fullname))
                 {
                     computedCalledTimes += 1;
+                    lastFullname = wololo.Fullname;
                 }
             };
             Assert.Equal(0, computedCalledTimes);
-            var a = 2;
-            var b = 3;
-            someViewModel.A = a;
+            Assert.Equal("", lastFullname);
+            wololo.Name = "Servostasio";
             Assert.Equal(1, computedCalledTimes);
-            someViewModel.B = b;
+            Assert.Equal("Servostasio", lastFullname);
+            wololo.Surname = "Tandori";
             Assert.Equal(2, computedCalledTimes);
-            Assert.Equal(a * b, someViewModel.Result);
+            Assert.Equal("Servostasio Tandori", lastFullname);
+            Assert.Equal("Servostasio Tandori", wololo.Fullname);
         }
 
-        class SomeViewModel : ComputedBindableBase
+        class Contact : ComputedBindableBase
         {
-            private int a;
-            public int A { get { return a; } set { Set(ref a, value); } }
+            private string name;
+            public string Name { get { return name; } set { Set(ref name, value); } }
 
-            private int b;
-            public int B { get { return b; } set { Set(ref b, value); } }
+            private string surname;
+            public string Surname { get { return surname; } set { Set(ref surname, value); } }
 
-            [PropertySource(nameof(A), nameof(B))]
-            public int Result => A * B;
+            [PropertySource(nameof(Name), nameof(Surname))]
+            public string Fullname => $"{Name} {Surname}".Trim();
         }
     }
 }

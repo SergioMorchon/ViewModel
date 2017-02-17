@@ -1,8 +1,19 @@
 {
+  "name": "ViewModel-Base",
   "version": "1.0.0-*",
+  "authors": [
+    "Sergio Morchón Poveda"
+  ],
+  "title": "ViewModel Base",
   "buildOptions": {
-    "debugType": "portable",
-    "outputName": "Viewmodel"
+    "debugType": "portable"
+  },
+  "packOptions": {
+    "projectUrl": "https://github.com/SergioMorchon/ViewModel",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/SergioMorchon/ViewModel.git"
+    }
   },
   "dependencies": {
   },

@@ -2,6 +2,8 @@
 
 Some tiny and useful well known base classes for building ViewModels at any .NET Standard >= 1.6 project.
 
+Available as a nuget package [ViewModel-Base](https://www.nuget.org/packages/ViewModel-Base/).
+
 ## [BindableBase](./src/BindableBase.cs)
 
 A well known basic class that implements `INotifyPropertyChanged`.

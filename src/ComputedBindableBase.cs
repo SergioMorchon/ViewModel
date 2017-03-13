@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 
 namespace ViewModel
 {
@@ -8,7 +9,7 @@ namespace ViewModel
         public ComputedBindableBase()
         {
             var properties = new Dictionary<string, HashSet<string>>();
-            foreach (var property in this.GetType().GetTypeInfo().GetProperties())
+            foreach (var property in this.GetType().GetTypeInfo().DeclaredProperties)
             {
                 var computedAttribute = property.GetCustomAttribute<PropertySourceAttribute>();
                 if (computedAttribute == null) {

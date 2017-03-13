@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyTitle>ViewModel Base</AssemblyTitle>
+    <Authors>Sergio Morchón Poveda</Authors>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <DebugType>portable</DebugType>
+    <AssemblyName>ViewModel-Base</AssemblyName>
+    <PackageId>ViewModel-Base</PackageId>
+    <PackageProjectUrl>https://github.com/SergioMorchon/ViewModel</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/SergioMorchon/ViewModel.git</RepositoryUrl>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <Version>1.0.1</Version>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Product>ViewModel Base</Product>
+    <Company />
+    <PackageTags>ViewModel MVVM Computed</PackageTags>
+    <PackageReleaseNotes>.NET Core requirement fixes</PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>

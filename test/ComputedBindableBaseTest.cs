@@ -33,10 +33,10 @@ namespace Tests
         class Contact : ComputedBindableBase
         {
             private string name;
-            public string Name { get { return name; } set { Set(ref name, value); } }
+            public string Name { get => name; set => Set(ref name, value); }
 
             private string surname;
-            public string Surname { get { return surname; } set { Set(ref surname, value); } }
+            public string Surname { get => surname; set => Set(ref surname, value); }
 
             [PropertySource(nameof(Name), nameof(Surname))]
             public string Fullname => $"{Name} {Surname}".Trim();

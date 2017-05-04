@@ -6,7 +6,7 @@ namespace Tests
     public class BindableBaseTest
     {
         [Fact]
-        public void TestAll() 
+        public void TestAll()
         {
             var called = false;
             var calledPropertyName = "";
@@ -27,7 +27,7 @@ namespace Tests
         private class Pet : BindableBase
         {
             private string name;
-            public string Name { get { return name; } set { Set(ref name, value); } }
+            public string Name { get => name; set => Set(ref name, value); }
         }
     }
 }
